@@ -3,7 +3,7 @@
 
 Install construct
 
-  git clone git@github.com:pivotal-cloudops/construct.git
+  
 
 Then run it
 
@@ -76,4 +76,3 @@ To create a new unit try:
 ``` bash
 ./create-unit $UNIT_NAME
 ```
-

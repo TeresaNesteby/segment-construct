@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e # Exit if any command fails
+set -ex # Exit if any command fails
 
 # If multiple args given run this script once for each arg
 test $2 && {
