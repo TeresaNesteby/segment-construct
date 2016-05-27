@@ -1,2 +1,1 @@
-This extension to homebrew allows us to install commerical programs like
-chrome and sublime.
+This extension to homebrew allows us to install commercial programs like chrome and sublime.
