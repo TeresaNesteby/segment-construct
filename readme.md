@@ -1,10 +1,25 @@
 # Construct
 
+Construct helps you to quickly setup your computer with the tools we have found helpful here at Segment.
+Construct includes:
 
-Install construct
+  atom
+  commandline-tools
+  homebrew
+  homebrew-casks
+  iterm
+  google-chrome
+  recordit
+  slack
+  vagrant
+  virtualbox
+
+
+To install construct, open your terminal and type:
 
   `git clone git@github.com:TeresaNesteby/segment-construct.git`  
-Then run it
+
+Then in your terminal type:
 
     ./construct
 
