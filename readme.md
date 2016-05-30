@@ -1,7 +1,8 @@
 # Construct
 
 Construct helps you to quickly setup your computer with the tools we have found helpful here at Segment.
-Construct includes:
+
+Construct will install the following tools:  
 
   atom
   commandline-tools
@@ -15,7 +16,7 @@ Construct includes:
   virtualbox
 
 
-To install construct, open your terminal and type:
+To install Construct, open your terminal and type:
 
   `git clone git@github.com:TeresaNesteby/segment-construct.git`  
 
