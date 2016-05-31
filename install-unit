@@ -3,6 +3,7 @@
 set -ex # Exit if any command fails
 
 # If multiple args given run this script once for each arg
+
 test $2 && {
   for arg in $@
     do $0 $arg
@@ -13,9 +14,9 @@ test $2 && {
 # ---
 
 function msg {
-  local blue="\e[2;36m"
+  local green="\e[5;30;42m"
   local reset="\e[m\n"
-  printf "$blue$1$reset\n"
+  printf "$green$1$reset\n"
 }
 
 unit_name=$1
@@ -48,6 +49,7 @@ test -f _blacklist && {
 }
 
 # Exit if there's a guard file and the guard detects an install
+#what is guard?
 test -f $guard_file && sh $guard_file && {
   msg "-* $unit_name already installed"
   exit
