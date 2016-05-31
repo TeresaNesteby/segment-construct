@@ -16,23 +16,29 @@ Construct will install the following tools:
   virtualbox
 
 
-To install Construct, open your terminal and type:
+To install Construct:
 
-  `git clone git@github.com:TeresaNesteby/segment-construct.git`  
+  1.  To open your terminal press command + space and type 'terminal'.  Then press enter.
 
-Then in your terminal type:
+  2.  In your terminal type:
+    `git clone https://github.com/TeresaNesteby/segment-construct.git`
 
-    ./construct
+  3.  In your terminal type:
+    `cd segment-construct`
 
-## construct Your Machine
+  4.  Next, type:
+    `./construct`
 
-Construct supports blacklisting units for special installation needs: units in `_blacklist` will be skipped
+
+## Construct Your Machine
+
+Construct supports blacklisting units for special installation needs, units in `_blacklist` will be skipped.
 
 ## Usage & Development
 
-This is how you modify construct:
+To modify construct:
 
-First, create a unit: `./create-unit unit-name`. A unit is a folder. A unit
+First, create a unit (a folder): `./create-unit unit-name`. A unit
 sets up **one** aspect of the machine. That's why it's called a unit.
 
 Units have four kind of files (that construct cares about):
@@ -50,14 +56,14 @@ names in the `priority-units` file.
 
 ## The Way of construct
 
-construct is inspired by systems like [boxen], [sprout-wrap], [sprout], [chef],
+Construct is inspired by systems like [boxen], [sprout-wrap], [sprout], [chef],
 [babushka] and [puppet].
 
-construct is not better, just simpler. construct has no external dependencies. construct
+Construct is not better, just simpler. construct has no external dependencies. construct
 has no server. There are no conferences about construct. There are no consultancies
 that offer construct services. construct is designed to be simple enough to setup workstations and jumpboxes. It is not the right tool for many, many other use cases.
 
-construct is okay with units that require manual operator intervention as construct is
+Construct is okay with units that require manual operator intervention as construct is
 as much about documentation as it is about automation. In fact, if construct was a
 person it would suggest you first write your units as the kind that instruct the
 operator _before_ you investigate how to make them automated and non-interactive.
