@@ -1,13 +1,16 @@
 #!/bin/sh
 
+#sets variables, exit if command fails
 set -e
+#takes unit name input and sets it to $ with output of 1?
 name=$1
-
+#test if there is directory with that name already or exits? --Confused
 test $name || {
   echo "Usage: $0 name-of-unit"
   exit
 }
 
+#makes this directory and associated files
 mkdir $name
 touch $name/deps
 touch $name/readme.md
