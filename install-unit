@@ -1,8 +1,11 @@
 #!/bin/sh
+# 0 = true, 1 = false
+#Exit if any command fails
+# set -ex would print each step of the way and exit if any command fails
+set -e
 
-set -e # Exit if any command fails
-
-# If multiple args given run this script once for each arg
+# If multiple args given run this script once for each arg - the 2 checks for that?
+# what is @ = all?
 test $2 && {
   for arg in $@
     do $0 $arg
@@ -11,26 +14,27 @@ test $2 && {
 }
 
 # ---
-
+##printf prints the arguments -
 function msg {
-  local blue="\e[2;36m"
+  local green="\e[5;30;42m"
   local reset="\e[m\n"
-  printf "$blue$1$reset\n"
+  printf "$green$1$reset\n"
 }
-
+#sets these variables - again, what is the 1?
 unit_name=$1
 unit_dir=$unit_name
+#where is _units coming from-I see no _units folder? tests if unit directory name is the same as the directory name?
 test -d _units/$unit_name && unit_dir=_units/$unit_name
-
+#sets these variables
 deps_file="$unit_dir/deps"
 guard_file="$unit_dir/verify-install.sh"
 install_file="$unit_dir/install.sh"
-
+#tests if that directory exists, if it doesn't prints not found response and exits program
 test -d $unit_dir || {
   msg "-* $unit_name not found"
   exit 1
 }
-
+#checks to see if there is a blacklist file and searches that file for Selected lines that do not match any of the specified patterns.
 # Skip if this unit or any deps are blacklisted
 test -f _blacklist && {
   (grep -v '^#' _blacklist | grep -x -q "^$unit_name\$" -) && {
@@ -48,6 +52,7 @@ test -f _blacklist && {
 }
 
 # Exit if there's a guard file and the guard detects an install
+#what is guard file?
 test -f $guard_file && sh $guard_file && {
   msg "-* $unit_name already installed"
   exit
@@ -66,4 +71,5 @@ test -f $guard_file && (sh $guard_file || {
   exit 1
 })
 
+#write to the terminal: 
 msg "-* $unit_name installed"
