@@ -3,7 +3,7 @@
 
 Install construct
 
-  git clone git@github.com:pivotal-cloudops/construct.git
+   TODO
 
 Then run it
 
